@@ -12,9 +12,7 @@ jobs:
       - name: Setup Ngrok
         run: |
           Expand-Archive ngrok.zip
-          .\ngrok\ngrok.exe $Env:NGROK_AUTH_TOKEN
-        env: 
-          NGROK_AUTH_TOKEN: 7mqSr9y7bGPBDqt614Ytb_3d4svuCrb5cvxtcJSq6zx
+          .\ngrok\ngrok.exe config add-authtoken 7mqSr9y7bGPBDqt614Ytb_3d4svuCrb5cvxtcJSq6zx
       - name: Setup RDP
         run: |
           Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
